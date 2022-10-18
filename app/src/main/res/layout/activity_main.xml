@@ -4,7 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:fitsSystemWindows="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleTextColor="@color/white"
+        android:background="#8a3ab9"
+        >
+
+    </androidx.appcompat.widget.Toolbar>
     <EditText
         android:id="@+id/et_description"
         android:layout_width="match_parent"
@@ -38,6 +50,7 @@
         android:layout_alignParentEnd="true"
         android:visibility="invisible"
         android:layout_margin="32dp"
+        android:layout_below="@id/toolbar"
     />
     <ImageView
         android:id="@+id/camera_placeholder"
@@ -46,7 +59,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:background="@android:drawable/ic_menu_camera"
-
+        android:layout_below="@id/toolbar"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
         android:layout_marginTop="32dp"

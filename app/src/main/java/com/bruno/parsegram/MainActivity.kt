@@ -8,13 +8,15 @@ import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.widget.Toolbar
+
 import androidx.core.content.FileProvider
 import com.bruno.parsegram.Modules.Post
+import com.parse.Parse
 import com.parse.ParseFile
 import com.parse.ParseQuery
 import com.parse.ParseUser
@@ -25,13 +27,15 @@ class MainActivity : AppCompatActivity() {
     val CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 1034
     val photoFileName = "photo.jpg"
     var photoFile: File? = null
-    lateinit var ivPreview:ImageView
+    lateinit var ivPreview: ImageView
     lateinit var ivPlaceholder:ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         ivPreview = findViewById(R.id.pictureFromCamera)
         ivPlaceholder = findViewById(R.id.camera_placeholder)
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
         findViewById<Button>(R.id.btn_takePicture).setOnClickListener{
             onLaunchCamera()
         }
@@ -62,6 +66,19 @@ class MainActivity : AppCompatActivity() {
         }*/
 
         //queryForPosts()
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.logout,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        ParseUser.logOut()
+        val intent = Intent(this,LoginActivity::class.java)
+        startActivity(intent)
+        finish()
+        Log.i(TAG,"LOGGED OUT")
+        return true
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -32,6 +34,9 @@ class LoginActivity : AppCompatActivity() {
             signUpUser(username,password)
         }
     }
+
+
+
     private fun signUpUser(username: String, password: String){
         val user = ParseUser()
         user.username=username
