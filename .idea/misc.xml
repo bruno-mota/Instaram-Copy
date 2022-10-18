@@ -6,7 +6,8 @@
         <entry key="app/src/main/res/drawable/login_et.xml" value="0.14" />
         <entry key="app/src/main/res/drawable/login_register_btn.xml" value="0.14" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.21929824561403508" />
+        <entry key="app/src/main/res/menu/logout.xml" value="0.30012359619140627" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="app/src/main/res/xml/fileprovider.xml" value="0.14175724637681159" />
       </map>
