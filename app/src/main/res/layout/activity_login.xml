@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="@drawable/instagram_background"
+    >
+    <ImageView
+        android:id="@+id/insta_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/insta_logo"
+        android:maxHeight="100dp"
+        android:maxWidth="100dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+
+        />
+
+    <EditText
+        android:id="@+id/et_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Username"
+        android:textSize="28sp"
+        android:layout_below="@+id/insta_logo"
+        android:textColor="@color/white"
+        android:textColorHint="@color/light_gray"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+
+        android:elevation="3dp"
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+         />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="28sp"
+
+        android:inputType="textPassword"
+        android:hint="Password"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/light_gray"
+        android:layout_below="@id/et_userName"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:elevation="3dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+
+        />
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOGIN"
+        android:textSize="30sp"
+        android:layout_below="@id/et_password"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        />
+    <Button
+        android:id="@+id/btn_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textSize="30sp"
+        android:layout_below="@id/btn_login"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        />
+</RelativeLayout>
