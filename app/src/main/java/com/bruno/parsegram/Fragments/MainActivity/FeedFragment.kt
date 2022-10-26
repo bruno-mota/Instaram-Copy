@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.bruno.parsegram.Modules.Post
 import com.bruno.parsegram.PostAdapter
 import com.bruno.parsegram.R
@@ -17,6 +18,7 @@ open class FeedFragment : Fragment() {
 
     lateinit var postsRecyclerView: RecyclerView
     lateinit var adapter: PostAdapter
+    lateinit var swipeRefresh: SwipeRefreshLayout
     var allPosts:MutableList<Post> = mutableListOf()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,18 +30,23 @@ open class FeedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        swipeRefresh = view.findViewById(R.id.feed_refresh)
         postsRecyclerView = view.findViewById(R.id.rv_posts)
         adapter = PostAdapter(requireContext(),allPosts)
         postsRecyclerView.adapter=adapter
         postsRecyclerView.layoutManager=LinearLayoutManager(requireContext())
         queryForPosts()
 
+        swipeRefresh.setOnRefreshListener {
+            queryForPosts()
+        }
     }
     open fun queryForPosts() {
         val query : ParseQuery<Post> = ParseQuery.getQuery(Post::class.java)
         query.include(Post.KEY_USER)
         query.addDescendingOrder("createdAt")
         query.findInBackground { posts, e ->
+
             if (e != null) {
                 Log.e(TAG, "Error fetching posts "+e)
             } else {
@@ -49,7 +56,9 @@ open class FeedFragment : Fragment() {
                             TAG, "Post:  " + post.getDescription()+ " ,username: "+
                                 post.getUser()?.username)
                     }
+
                 }
+                swipeRefresh.isRefreshing=false
                 allPosts.addAll(posts)
                 adapter.notifyDataSetChanged()
             }
