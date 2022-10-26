@@ -3,11 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_logout.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/insta_icon_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/login_et.xml" value="0.14" />
         <entry key="app/src/main/res/drawable/login_register_btn.xml" value="0.14" />
+        <entry key="app/src/main/res/drawable/rounder_borders.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/shadow_drawable.xml" value="0.1985" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.21929824561403508" />
-        <entry key="app/src/main/res/menu/logout.xml" value="0.30012359619140627" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_compose.xml" value="0.10410334346504559" />
+        <entry key="app/src/main/res/layout/fragment_feed.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.19882246376811594" />
+        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.19882246376811594" />
+        <entry key="app/src/main/res/layout/item_post.xml" value="0.2715057373046875" />
+        <entry key="app/src/main/res/menu/logout.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/menu_bottom_navigation.xml" value="0.2140625" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="app/src/main/res/xml/fileprovider.xml" value="0.14175724637681159" />
       </map>

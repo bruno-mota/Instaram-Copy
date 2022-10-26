@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.MainActivity.ComposeFragment">
+
+    <EditText
+        android:id="@+id/et_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:hint="Description"
+        android:gravity="center"
+        android:layout_below="@id/pictureFromCamera"
+        android:ems="10"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        />
+    <Button
+        android:id="@+id/btn_takePicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Take Picture"
+        android:textSize="20sp"
+        android:layout_below="@id/et_description"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+
+        />
+    <ImageView
+        android:id="@+id/pictureFromCamera"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:visibility="invisible"
+        android:layout_margin="32dp"
+        android:layout_alignParentTop="true"
+        />
+    <ImageView
+        android:id="@+id/camera_placeholder"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="@android:drawable/ic_menu_camera"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginTop="32dp"
+        android:elevation="1dp"
+        />
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textSize="20sp"
+
+        android:layout_below="@id/btn_takePicture"
+
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        />
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_below="@id/btn_submit"/>
+
+</RelativeLayout>
